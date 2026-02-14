@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio de Stage – Charlie Cadario</title>
+    <meta name="description"
+        content="Portfolio de stage de Charlie Cadario – Aspirant Ingénieur Aéronautique, élève de Seconde au Lycée André Malraux. Profil, Projets techniques et Expérience professionnelle." />
+
+    <!-- Favicon (inline SVG) -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%230c1d3a'/%3E%3Ctext x='50' y='65' text-anchor='middle' font-size='50' font-family='serif' fill='white'%3ECC%3C/text%3E%3C/svg%3E" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@500;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        /* ===========================
+       CSS RESET & BASE
+       =========================== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Palette */
+            --navy: #0c1d3a;
+            --navy-light: #13294b;
+            --navy-dark: #081428;
+            --blue-accent: #3b82f6;
+            --blue-soft: #60a5fa;
+            --blue-pale: #dbeafe;
+            --gold: #f59e0b;
+            --gold-soft: #fbbf24;
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-serif: 'Playfair Display', Georgia, serif;
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+            --shadow-card-hover: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+
+            /* Transitions */
+            --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+            /* Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--off-white);
+            color: var(--gray-800);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ===========================
+       HEADER
+       =========================== */
+        .header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 50%, var(--navy) 100%);
+            color: var(--white);
+            padding: 48px 32px 56px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .header-content {
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-photo-wrapper {
+            flex-shrink: 0;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            transition: transform var(--transition-bounce), box-shadow var(--transition-base);
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.2);
+        }
+
+        .header-text h1 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: -0.02em;
+        }
+
+        .header-subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .header-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(0.8);
+            }
+        }
+
+        /* ===========================
+       MAIN CONTENT
+       =========================== */
+        .main {
+            max-width: 960px;
+            margin: -32px auto 60px;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 28px;
+        }
+
+        @media (min-width: 768px) {
+            .cards-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .card--full {
+                grid-column: 1 / -1;
+            }
+        }
+
+        /* ===========================
+       CARD BASE
+       =========================== */
+        .card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray-200);
+            transition:
+                transform var(--transition-bounce),
+                box-shadow var(--transition-base),
+                border-color var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-card-hover);
+            border-color: var(--blue-accent);
+        }
+
+        .card__header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .card__icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .card__icon-box svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .card__icon-box--blue {
+            background: linear-gradient(135deg, var(--blue-accent), var(--blue-soft));
+            color: var(--white);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .card__icon-box--gold {
+            background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+            color: var(--white);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+        }
+
+        .card__icon-box--navy {
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            color: var(--white);
+            box-shadow: 0 4px 12px rgba(12, 29, 58, 0.3);
+        }
+
+        .card__title {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            letter-spacing: -0.01em;
+        }
+
+        .card__label {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .card__description {
+            font-size: 0.925rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        /* Decorative corner glow on hover */
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            border-radius: 0 var(--radius-xl) 0 100%;
+            opacity: 0;
+            transition: opacity var(--transition-base);
+            pointer-events: none;
+        }
+
+        .card:hover::after {
+            opacity: 1;
+        }
+
+        .card--profile::after {
+            background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.06), transparent 70%);
+        }
+
+        .card--projects::after {
+            background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.06), transparent 70%);
+        }
+
+        .card--experience::after {
+            background: radial-gradient(circle at top right, rgba(12, 29, 58, 0.06), transparent 70%);
+        }
+
+        /* ===========================
+       PERSONAL PROFILE CARD
+       =========================== */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .hobby-tile {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            padding: 20px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+            transition:
+                background var(--transition-base),
+                border-color var(--transition-base),
+                transform var(--transition-bounce);
+        }
+
+        .hobby-tile:hover {
+            background: var(--blue-pale);
+            border-color: var(--blue-accent);
+            transform: translateY(-3px);
+        }
+
+        .hobby-tile__icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .hobby-tile__icon--handball {
+            background: linear-gradient(135deg, #ef4444, #f87171);
+            color: white;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+        }
+
+        .hobby-tile__icon--chess {
+            background: linear-gradient(135deg, var(--gray-800), var(--gray-600));
+            color: white;
+            box-shadow: 0 4px 12px rgba(55, 65, 81, 0.25);
+        }
+
+        .hobby-tile__icon--pingpong {
+            background: linear-gradient(135deg, #10b981, #34d399);
+            color: white;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+        }
+
+        .hobby-tile__name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--gray-800);
+        }
+
+        .hobby-tile__detail {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+        }
+
+        /* ===========================
+       TECHNICAL PROJECTS CARD
+       =========================== */
+        .project-item {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            margin-bottom: 16px;
+            transition:
+                background var(--transition-base),
+                border-color var(--transition-base),
+                transform var(--transition-bounce);
+            position: relative;
+        }
+
+        .project-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-item:hover {
+            background: #fffbeb;
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .project-item__title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--gray-900);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .project-item__title-icon {
+            font-size: 1.1rem;
+        }
+
+        .project-item__desc {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .tag--python {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .tag--data {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .tag--physics {
+            background: #ede9fe;
+            color: #5b21b6;
+        }
+
+        .tag--matplotlib {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .tag--automation {
+            background: #fce7f3;
+            color: #9d174d;
+        }
+
+        .tag--ai {
+            background: #ede9fe;
+            color: #5b21b6;
+        }
+
+        .tag--framework {
+            background: #ecfdf5;
+            color: #065f46;
+        }
+
+        .tag--algo {
+            background: #fff7ed;
+            color: #9a3412;
+        }
+
+        .tag--web {
+            background: #f0f9ff;
+            color: #0c4a6e;
+        }
+
+        /* ===========================
+       PROFESSIONAL EXPERIENCE CARD
+       =========================== */
+        .experience-block {
+            position: relative;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .experience-company {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--gray-900);
+        }
+
+        .experience-role {
+            font-size: 0.9rem;
+            color: var(--blue-accent);
+            font-weight: 600;
+        }
+
+        .experience-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 14px;
+            border-radius: var(--radius-full);
+            background: var(--navy);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.78rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .experience-tasks {
+            list-style: none;
+            padding: 0;
+        }
+
+        .experience-tasks li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .experience-tasks li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--blue-accent);
+        }
+
+        .experience-tasks li:nth-child(2)::before {
+            background: var(--gold);
+        }
+
+        .experience-tasks li:nth-child(3)::before {
+            background: var(--navy-light);
+        }
+
+        .experience-takeaway {
+            margin-top: 16px;
+            padding: 14px 18px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(245, 158, 11, 0.05));
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--blue-accent);
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            font-style: italic;
+        }
+
+        .experience-takeaway strong {
+            color: var(--gray-800);
+            font-style: normal;
+        }
+
+        /* ===========================
+       FOOTER
+       =========================== */
+        .footer {
+            text-align: center;
+            padding: 32px 24px 40px;
+            font-size: 0.8rem;
+            color: var(--gray-400);
+        }
+
+        .footer a {
+            color: var(--blue-accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color var(--transition-base);
+        }
+
+        .footer a:hover {
+            color: var(--navy);
+        }
+
+        /* ===========================
+       SCROLL REVEAL ANIMATION
+       =========================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* stagger cards */
+        .reveal:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+
+        .reveal:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+
+        /* ===========================
+       RESPONSIVE
+       =========================== */
+        @media (max-width: 600px) {
+            .header {
+                padding: 32px 20px 48px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-photo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .header-text h1 {
+                font-size: 1.6rem;
+            }
+
+            .main {
+                padding: 0 16px;
+            }
+
+            .card {
+                padding: 24px;
+            }
+
+            .hobbies-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            @media (max-width: 400px) {
+                .hobbies-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+        <div class="header-content">
+            <div class="profile-photo-wrapper">
+                <img src="images/profil.png" alt="Photo de profil de Charlie Cadario" class="profile-photo"
+                    id="profile-photo" />
+            </div>
+            <div class="header-text">
+                <h1>Charlie Cadario</h1>
+                <p class="header-subtitle">Aspirant Ingénieur Aéronautique | Élève de Seconde</p>
+                <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
+                    <span class="header-badge">
+                        <span class="dot"></span>
+                        Stage d'observation · Safran
+                    </span>
+                    <span class="header-badge">
+                        📍 Cannes-Écluse (77130)
+                    </span>
+                </div>
+                <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                    <span class="header-badge">
+                        ✉️ charliecadario@gmail.com
+                    </span>
+                    <span class="header-badge">
+                        📞 07 57 87 95 53
+                    </span>
+                    <a href="https://github.com/lepiratedu77" target="_blank" rel="noopener" class="header-badge"
+                        style="text-decoration:none;">
+                        🐙 github.com/lepiratedu77
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN ==================== -->
+    <main class="main">
+        <div class="cards-grid">
+
+            <!-- ===== PERSONAL PROFILE ===== -->
+            <section class="card card--profile reveal" id="card-profile">
+                <div class="card__header">
+                    <div class="card__icon-box card__icon-box--blue">
+                        <!-- User icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="card__title">Profil Personnel</h2>
+                        <span class="card__label">Soft Skills & Centres d'intérêt</span>
+                    </div>
+                </div>
+                <p class="card__description">
+                    Passionné par l'aéronautique et les nouvelles technologies, je combine rigueur académique et esprit
+                    de compétition. Mes activités sportives et stratégiques développent des compétences essentielles
+                    pour l'ingénierie.
+                </p>
+                <div class="hobbies-grid">
+                    <div class="hobby-tile" id="hobby-handball">
+                        <div class="hobby-tile__icon hobby-tile__icon--handball">🤾</div>
+                        <span class="hobby-tile__name">Handball</span>
+                        <span class="hobby-tile__detail">Gardien de but · Réactivité, gestion du stress &
+                            communication</span>
+                    </div>
+                    <div class="hobby-tile" id="hobby-chess">
+                        <div class="hobby-tile__icon hobby-tile__icon--chess">♟️</div>
+                        <span class="hobby-tile__name">Échecs</span>
+                        <span class="hobby-tile__detail">700 ELO · Analyse & résolution de problèmes</span>
+                    </div>
+                    <div class="hobby-tile" id="hobby-pingpong">
+                        <div class="hobby-tile__icon hobby-tile__icon--pingpong">🏓</div>
+                        <span class="hobby-tile__name">Tennis de Table</span>
+                        <span class="hobby-tile__detail">Précision & concentration</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== TECHNICAL PROJECTS ===== -->
+            <section class="card card--projects reveal" id="card-projects">
+                <div class="card__header">
+                    <div class="card__icon-box card__icon-box--gold">
+                        <!-- Code icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="card__title">Projets Techniques</h2>
+                        <span class="card__label">Hard Skills · Python & Vibe Coding</span>
+                    </div>
+                </div>
+
+                <div class="project-item" id="project-1">
+                    <div class="project-item__title">
+                        <span class="project-item__title-icon">🐍</span>
+                        Programmation Python – France-IOI
+                    </div>
+                    <p class="project-item__desc">
+                        Niveau 2 sur France-IOI. Maîtrise des structures logiques, algorithmiques et résolution de
+                        problèmes par la programmation.
+                    </p>
+                    <div class="tags">
+                        <span class="tag tag--python">Python</span>
+                        <span class="tag tag--algo">Algorithmique</span>
+                        <span class="tag tag--data">Logique</span>
+                    </div>
+                </div>
+
+                <div class="project-item" id="project-2">
+                    <div class="project-item__title">
+                        <span class="project-item__title-icon">🤖</span>
+                        Vibe Coding – Calendrier de l'Avent
+                    </div>
+                    <p class="project-item__desc">
+                        Développement d'un calendrier de l'Avent interactif via IA : informations personnalisées et
+                        mini-jeux quotidiens.
+                    </p>
+                    <div class="tags">
+                        <span class="tag tag--ai">Vibe Coding</span>
+                        <span class="tag tag--web">Application Web</span>
+                        <span class="tag tag--framework">Antigravity</span>
+                    </div>
+                </div>
+
+                <div class="project-item" id="project-3">
+                    <div class="project-item__title">
+                        <span class="project-item__title-icon">🏠</span>
+                        Vibe Coding – Gestionnaire de Vie Familiale
+                    </div>
+                    <p class="project-item__desc">
+                        Application complète incluant un coffre-fort de mots de passe, un agenda partagé et un système
+                        de vote familial.
+                    </p>
+                    <div class="tags">
+                        <span class="tag tag--ai">Vibe Coding</span>
+                        <span class="tag tag--web">Application Web</span>
+                        <span class="tag tag--automation">Full-Stack</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== PROFESSIONAL EXPERIENCE ===== -->
+            <section class="card card--experience card--full reveal" id="card-experience">
+                <div class="card__header">
+                    <div class="card__icon-box card__icon-box--navy">
+                        <!-- Briefcase icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="card__title">Parcours Scolaire & Expérience</h2>
+                        <span class="card__label">Formation & Stage d'observation</span>
+                    </div>
+                </div>
+
+                <!-- Parcours scolaire -->
+                <div class="experience-block" style="margin-bottom: 24px;">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-company">🎓 Lycée André Malraux</div>
+                            <div class="experience-role">Montereau-Fault-Yonne · Classe de Seconde</div>
+                        </div>
+                        <span class="experience-date" id="experience-school">
+                            <!-- Calendar icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"
+                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                            </svg>
+                            2025 – 2026
+                        </span>
+                    </div>
+                    <div class="experience-takeaway" style="margin-top: 0;">
+                        <strong>🧭 Orientation :</strong> Préparation aux spécialités Mathématiques, Physique-Chimie et
+                        NSI (ou SI) pour la classe de Première.
+                    </div>
+                </div>
+
+                <!-- Stage d'observation -->
+                <div class="experience-block">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-company">💼 Stage d'observation (3ème)</div>
+                            <div class="experience-role">Immersion en entreprise informatique</div>
+                        </div>
+                        <span class="experience-date" id="experience-date">
+                            <!-- Calendar icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"
+                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                            </svg>
+                            2024
+                        </span>
+                    </div>
+
+                    <ul class="experience-tasks" id="experience-tasks">
+                        <li>Observation de protocoles de cybersécurité et bonnes pratiques en sécurité informatique.
+                        </li>
+                        <li>Maintenance réseau et assistance logicielle auprès des équipes techniques.</li>
+                        <li>Assemblage de stations de travail et découverte de l'infrastructure matérielle.</li>
+                    </ul>
+
+                    <div class="experience-takeaway">
+                        <strong>💡 Ce que j'en retiens :</strong> Cette immersion m'a permis de découvrir concrètement
+                        le fonctionnement d'une entreprise IT et de confirmer mon intérêt pour les domaines techniques
+                        et l'ingénierie.
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <p>Portfolio réalisé par <strong>Charlie Cadario</strong> · Stage Safran 2026 · <a
+                href="https://github.com/lepiratedu77" target="_blank" rel="noopener">GitHub</a></p>
+    </footer>
+
+    <!-- ==================== JS: Scroll Reveal ==================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.15 }
+            );
+
+            reveals.forEach((el) => observer.observe(el));
+        });
+    </script>
+
+</body>
+
+</html>

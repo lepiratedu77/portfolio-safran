@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+    <style type="text/tailwindcss">
+
+      @theme inline {
+        --color-background: var(--background);
+        --color-foreground: var(--foreground);
+        --color-primary: var(--primary);
+        --color-primary-foreground: var(--primary-foreground);
+        --color-secondary: var(--secondary);
+        --color-secondary-foreground: var(--secondary-foreground);
+        --color-muted: var(--muted);
+        --color-muted-foreground: var(--muted-foreground);
+        --color-accent: var(--accent);
+        --color-accent-foreground: var(--accent-foreground);
+        --color-destructive: var(--destructive);
+        --color-card: var(--card);
+        --color-card-foreground: var(--card-foreground);
+        --color-popover: var(--popover);
+        --color-popover-foreground: var(--popover-foreground);
+        --color-border: var(--border);
+        --color-input: var(--input);
+        --color-ring: var(--ring);
+        --color-chart-1: var(--chart-1);
+        --color-chart-2: var(--chart-2);
+        --color-chart-3: var(--chart-3);
+        --color-chart-4: var(--chart-4);
+        --color-chart-5: var(--chart-5);
+
+        --font-font-sans: var(--font-sans);
+        --font-font-heading: var(--font-heading);
+        --font-font-serif: var(--font-serif);
+        --font-font-mono: var(--font-mono);
+
+        --radius-sm: calc(var(--radius) - 4px);
+        --radius-md: calc(var(--radius) - 2px);
+        --radius-lg: var(--radius);
+        --radius-xl: calc(var(--radius) + 4px);
+      }
+
+      :root {
+          --background: #0a1628;
+        --foreground: #f0f4f8;
+        --primary: #4a9eff;
+        --primary-foreground: #ffffff;
+        --secondary: #1e3a5f;
+        --secondary-foreground: #e0e7ef;
+        --muted: #152238;
+        --muted-foreground: #8da4bf;
+        --accent: #5eb3ff;
+        --accent-foreground: #ffffff;
+        --destructive: #ef4444;
+        --card: #ffffff;
+        --card-foreground: #0f172a;
+        --popover: #ffffff;
+        --popover-foreground: #0f172a;
+        --border: #1e3a5f;
+        --input: #1e3a5f;
+        --ring: #4a9eff;
+        --chart-1: #4a9eff;
+        --chart-2: #5eb3ff;
+        --chart-3: #7ec8ff;
+        --chart-4: #a0d8ff;
+        --chart-5: #c4e7ff;
+
+        --font-sans: "Plus Jakarta Sans";
+        --font-heading: "Plus Jakarta Sans";
+        --font-serif: "Playfair Display";
+        --font-mono: "JetBrains Mono";
+
+        --radius: 0.75rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      eid="e1"
+      class="min-h-screen bg-background text-foreground font-sans pb-20 selection:bg-accent selection:text-accent-foreground"
+    >
+      <div
+        eid="e2"
+        class="relative bg-gradient-to-br from-primary via-primary/90 to-secondary pt-16 pb-32 px-6 overflow-hidden"
+      >
+        <div eid="e3" class="absolute top-10 right-8 opacity-10 pointer-events-none">
+          <iconify-icon icon="mdi:engine" eid="e4" class="size-32 text-white"></iconify-icon>
+        </div>
+        <div eid="e5" class="absolute bottom-16 left-6 opacity-10 pointer-events-none">
+          <iconify-icon
+            icon="solar:code-square-linear"
+            eid="e6"
+            class="size-24 text-white"
+          ></iconify-icon>
+        </div>
+        <div eid="e7" class="absolute top-32 left-12 opacity-10 pointer-events-none">
+          <iconify-icon
+            icon="mdi:airplane-takeoff"
+            eid="e8"
+            class="size-20 text-white"
+          ></iconify-icon>
+        </div>
+        <div eid="e9" class="flex flex-col items-center text-center relative z-10">
+          <div
+            eid="e10"
+            class="size-40 rounded-full border-8 border-white/30 shadow-2xl overflow-hidden mb-6 bg-white"
+          >
+            <img
+              alt="Profile"
+              eid="e11"
+              src="https://lh3.googleusercontent.com/a/ACg8ocI81-2aU7TRwroMOedtbwM8FnOTypPiZWBTgmbuaBUoQl4Z0w=s96-c"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            eid="e12"
+            class="bg-white/10 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs border border-white/20 mb-3 text-white font-semibold"
+          >
+            15 Years Old • Aspiring Aerospace Engineer
+          </div>
+          <h1 eid="e13" class="text-3xl font-bold font-heading mb-2 tracking-tight text-white">
+            Charlie Cadario
+          </h1>
+          <p eid="e14" class="text-primary-foreground/90 text-sm mb-4">
+            Exploring the intersection of aviation and technology
+          </p>
+          <div
+            eid="e15"
+            class="flex flex-wrap justify-center gap-3 text-xs text-white/80 w-full max-w-md"
+          >
+            <div
+              eid="e16"
+              class="flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg border border-white/20"
+            >
+              <iconify-icon icon="solar:letter-linear" eid="e17" class="size-4"></iconify-icon
+              ><span eid="e18">charlie.cadario@email.com</span>
+            </div>
+            <div
+              eid="e19"
+              class="flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg border border-white/20"
+            >
+              <iconify-icon icon="solar:map-point-linear" eid="e20" class="size-4"></iconify-icon
+              ><span eid="e21">San Francisco, CA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <main eid="e22" class="px-5 -mt-20 relative z-20 space-y-6 pb-8">
+        <section
+          eid="e23"
+          class="bg-card text-card-foreground rounded-3xl p-6 shadow-xl border-2 border-primary/20"
+        >
+          <div eid="e24" class="flex items-center gap-3 mb-5">
+            <div
+              eid="e25"
+              class="bg-gradient-to-br from-primary to-accent p-3 rounded-2xl text-white shadow-lg"
+            >
+              <iconify-icon icon="mdi:github" eid="e26" class="size-7"></iconify-icon>
+            </div>
+            <div eid="e27">
+              <h2 eid="e28" class="text-xl font-bold font-heading text-primary">My Tech Journey</h2>
+              <p eid="e29" class="text-xs text-muted-foreground">Python &amp; GitHub</p>
+            </div>
+          </div>
+          <div eid="e30" class="space-y-4">
+            <div
+              eid="e31"
+              class="bg-gradient-to-r from-primary/5 to-accent/5 border-l-4 border-primary pl-4 pr-4 py-4 rounded-r-xl relative"
+            >
+              <div eid="e32" class="absolute top-4 right-4 opacity-20">
+                <iconify-icon
+                  icon="mdi:language-python"
+                  eid="e33"
+                  class="size-8 text-primary"
+                ></iconify-icon>
+              </div>
+              <h3 eid="e34" class="font-bold text-base mb-2 flex items-center gap-2">
+                <iconify-icon
+                  icon="solar:rocket-2-bold"
+                  eid="e35"
+                  class="size-5 text-accent"
+                ></iconify-icon
+                ><span eid="e36">Flight Trajectory Simulator</span>
+              </h3>
+              <p eid="e37" class="text-sm text-muted-foreground mb-3 leading-relaxed">
+                Python-based simulation calculating basic projectile motion with air resistance
+                factors. Exploring the physics of flight through code.
+              </p>
+              <div eid="e38" class="flex gap-2 flex-wrap">
+                <span
+                  eid="e39"
+                  class="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-semibold"
+                  >Python</span
+                ><span
+                  eid="e40"
+                  class="text-xs bg-accent/10 text-accent px-3 py-1 rounded-full font-semibold"
+                  >Matplotlib</span
+                ><span
+                  eid="e41"
+                  class="text-xs bg-secondary/10 text-secondary px-3 py-1 rounded-full font-semibold"
+                  >Physics</span
+                >
+              </div>
+            </div>
+            <div
+              eid="e42"
+              class="bg-gradient-to-r from-accent/5 to-primary/5 border-l-4 border-accent pl-4 pr-4 py-4 rounded-r-xl relative"
+            >
+              <div eid="e43" class="absolute top-4 right-4 opacity-20">
+                <iconify-icon
+                  icon="solar:code-square-linear"
+                  eid="e44"
+                  class="size-8 text-accent"
+                ></iconify-icon>
+              </div>
+              <h3 eid="e45" class="font-bold text-base mb-2 flex items-center gap-2">
+                <iconify-icon
+                  icon="solar:cloud-bold"
+                  eid="e46"
+                  class="size-5 text-primary"
+                ></iconify-icon
+                ><span eid="e47">Arduino Weather Station</span>
+              </h3>
+              <p eid="e48" class="text-sm text-muted-foreground mb-3 leading-relaxed">
+                Built a mini weather monitoring system to track temperature and pressure changes.
+                Understanding atmospheric conditions for flight planning.
+              </p>
+              <div eid="e49" class="flex gap-2 flex-wrap">
+                <span
+                  eid="e50"
+                  class="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-semibold"
+                  >C++</span
+                ><span
+                  eid="e51"
+                  class="text-xs bg-accent/10 text-accent px-3 py-1 rounded-full font-semibold"
+                  >Hardware</span
+                ><span
+                  eid="e52"
+                  class="text-xs bg-secondary/10 text-secondary px-3 py-1 rounded-full font-semibold"
+                  >Arduino</span
+                >
+              </div>
+            </div>
+            <div
+              eid="e53"
+              class="bg-gradient-to-r from-secondary/5 to-primary/5 border-l-4 border-secondary pl-4 pr-4 py-4 rounded-r-xl relative"
+            >
+              <div eid="e54" class="absolute top-4 right-4 opacity-20">
+                <iconify-icon
+                  icon="solar:chart-2-bold"
+                  eid="e55"
+                  class="size-8 text-secondary"
+                ></iconify-icon>
+              </div>
+              <h3 eid="e56" class="font-bold text-base mb-2 flex items-center gap-2">
+                <iconify-icon
+                  icon="mdi:rocket-launch"
+                  eid="e57"
+                  class="size-5 text-accent"
+                ></iconify-icon
+                ><span eid="e58">Model Rocket Telemetry</span>
+              </h3>
+              <p eid="e59" class="text-sm text-muted-foreground mb-3 leading-relaxed">
+                Designed a basic payload to record altitude data during model rocket launches.
+                Hands-on experience with aerospace data collection.
+              </p>
+              <div eid="e60" class="flex gap-2 flex-wrap">
+                <span
+                  eid="e61"
+                  class="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-semibold"
+                  >Data Analysis</span
+                ><span
+                  eid="e62"
+                  class="text-xs bg-accent/10 text-accent px-3 py-1 rounded-full font-semibold"
+                  >Telemetry</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          eid="e63"
+          class="bg-card text-card-foreground rounded-3xl p-6 shadow-xl border-2 border-accent/20"
+        >
+          <div eid="e64" class="flex items-center gap-3 mb-5">
+            <div
+              eid="e65"
+              class="bg-gradient-to-br from-accent to-primary p-3 rounded-2xl text-white shadow-lg"
+            >
+              <iconify-icon icon="solar:book-2-bold" eid="e66" class="size-7"></iconify-icon>
+            </div>
+            <div eid="e67">
+              <h2 eid="e68" class="text-xl font-bold font-heading text-accent">
+                School &amp; Interests
+              </h2>
+              <p eid="e69" class="text-xs text-muted-foreground">Handball Goalie &amp; Chess</p>
+            </div>
+          </div>
+          <p eid="e70" class="text-sm text-muted-foreground leading-relaxed mb-5">
+            Balancing academics with athletic and strategic pursuits. Learning teamwork, quick
+            decision-making, and strategic thinking—skills that translate perfectly to engineering
+            challenges.
+          </p>
+          <div eid="e71" class="grid grid-cols-2 gap-4">
+            <div
+              eid="e72"
+              class="bg-gradient-to-br from-primary/10 to-accent/10 p-5 rounded-2xl border-2 border-primary/30 flex flex-col items-center text-center gap-3 relative overflow-hidden"
+            >
+              <div eid="e73" class="absolute -top-4 -right-4 opacity-10">
+                <iconify-icon
+                  icon="mdi:handball"
+                  eid="e74"
+                  class="size-24 text-primary"
+                ></iconify-icon>
+              </div>
+              <div eid="e75" class="bg-white p-3 rounded-full shadow-md text-primary relative z-10">
+                <iconify-icon icon="mdi:handball" eid="e76" class="size-8"></iconify-icon>
+              </div>
+              <div eid="e77" class="relative z-10">
+                <span eid="e78" class="text-sm font-bold block">Handball</span
+                ><span eid="e79" class="text-xs text-muted-foreground">Team Goalie</span>
+              </div>
+            </div>
+            <div
+              eid="e80"
+              class="bg-gradient-to-br from-accent/10 to-secondary/10 p-5 rounded-2xl border-2 border-accent/30 flex flex-col items-center text-center gap-3 relative overflow-hidden"
+            >
+              <div eid="e81" class="absolute -top-4 -right-4 opacity-10">
+                <iconify-icon
+                  icon="fa6-solid:chess-knight"
+                  eid="e82"
+                  class="size-24 text-accent"
+                ></iconify-icon>
+              </div>
+              <div eid="e83" class="bg-white p-3 rounded-full shadow-md text-accent relative z-10">
+                <iconify-icon icon="fa6-solid:chess-knight" eid="e84" class="size-8"></iconify-icon>
+              </div>
+              <div eid="e85" class="relative z-10">
+                <span eid="e86" class="text-sm font-bold block">Chess</span
+                ><span eid="e87" class="text-xs text-muted-foreground">Strategic Player</span>
+              </div>
+            </div>
+          </div>
+          <div
+            eid="e88"
+            class="mt-5 bg-gradient-to-r from-primary/5 to-accent/5 p-4 rounded-2xl border border-primary/20"
+          >
+            <div eid="e89" class="flex items-start gap-3">
+              <iconify-icon
+                icon="solar:lightbulb-bolt-bold"
+                eid="e90"
+                class="size-6 text-accent flex-shrink-0 mt-0.5"
+              ></iconify-icon>
+              <p eid="e91" class="text-xs text-muted-foreground leading-relaxed">
+                <span eid="e92" class="font-bold text-foreground">Why it matters:</span> Quick
+                reflexes from handball and strategic thinking from chess help me approach complex
+                aerospace problems with both speed and precision.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section
+          eid="e93"
+          class="bg-card text-card-foreground rounded-3xl p-6 shadow-xl border-2 border-secondary/20"
+        >
+          <div eid="e94" class="flex items-center gap-3 mb-5">
+            <div
+              eid="e95"
+              class="bg-gradient-to-br from-secondary to-primary p-3 rounded-2xl text-white shadow-lg"
+            >
+              <iconify-icon
+                icon="solar:case-minimalistic-bold"
+                eid="e96"
+                class="size-7"
+              ></iconify-icon>
+            </div>
+            <div eid="e97">
+              <h2 eid="e98" class="text-xl font-bold font-heading text-secondary">
+                First Professional Steps
+              </h2>
+              <p eid="e99" class="text-xs text-muted-foreground">Building real-world experience</p>
+            </div>
+          </div>
+          <div
+            eid="e100"
+            class="bg-gradient-to-br from-secondary/5 to-primary/5 rounded-2xl p-5 border-2 border-secondary/30 relative overflow-hidden"
+          >
+            <div eid="e101" class="absolute -bottom-8 -right-8 opacity-5">
+              <iconify-icon
+                icon="solar:laptop-minimalistic-bold"
+                eid="e102"
+                class="size-32 text-secondary"
+              ></iconify-icon>
+            </div>
+            <div eid="e103" class="flex justify-between items-start mb-4 relative z-10">
+              <div eid="e104">
+                <h3 eid="e105" class="font-bold text-lg mb-1">IT Support Intern</h3>
+                <p eid="e106" class="text-sm font-semibold text-primary">TechSolutions Inc.</p>
+              </div>
+              <span
+                eid="e107"
+                class="text-xs bg-white border-2 border-primary/30 px-3 py-1.5 rounded-full text-muted-foreground font-bold"
+                >Summer 2023</span
+              >
+            </div>
+            <ul eid="e108" class="space-y-3 relative z-10">
+              <li eid="e109" class="flex gap-3 items-start text-sm text-muted-foreground">
+                <div eid="e110" class="mt-1.5 size-2 bg-primary rounded-full flex-shrink-0"></div>
+                <span eid="e111"
+                  >Assisted in hardware troubleshooting and workstation setup for new
+                  employees.</span
+                >
+              </li>
+              <li eid="e112" class="flex gap-3 items-start text-sm text-muted-foreground">
+                <div eid="e113" class="mt-1.5 size-2 bg-accent rounded-full flex-shrink-0"></div>
+                <span eid="e114"
+                  >Managed inventory of computer peripherals and documented network
+                  configurations.</span
+                >
+              </li>
+              <li eid="e115" class="flex gap-3 items-start text-sm text-muted-foreground">
+                <div eid="e116" class="mt-1.5 size-2 bg-secondary rounded-full flex-shrink-0"></div>
+                <span eid="e117">Learned basics of enterprise network security protocols.</span>
+              </li>
+            </ul>
+            <div eid="e118" class="mt-5 pt-4 border-t border-border/50 flex items-center gap-2">
+              <iconify-icon
+                icon="solar:star-bold"
+                eid="e119"
+                class="size-5 text-accent"
+              ></iconify-icon>
+              <p eid="e120" class="text-xs text-muted-foreground italic">
+                First step into the professional tech world—building foundational skills for future
+                aerospace engineering roles.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section
+          eid="e121"
+          class="bg-gradient-to-br from-primary via-accent to-secondary text-white rounded-3xl p-6 shadow-xl relative overflow-hidden"
+        >
+          <div eid="e122" class="absolute -right-12 -top-12 opacity-10">
+            <iconify-icon icon="mdi:airplane" eid="e123" class="size-64"></iconify-icon>
+          </div>
+          <div eid="e124" class="absolute -left-8 -bottom-8 opacity-10">
+            <iconify-icon icon="mdi:engine" eid="e125" class="size-48"></iconify-icon>
+          </div>
+          <div eid="e126" class="flex items-center gap-3 mb-6 relative z-10">
+            <div
+              eid="e127"
+              class="bg-white/20 backdrop-blur-sm p-3 rounded-2xl text-white shadow-lg"
+            >
+              <iconify-icon icon="solar:rocket-2-bold" eid="e128" class="size-7"></iconify-icon>
+            </div>
+            <div eid="e129">
+              <h2 eid="e130" class="text-xl font-bold font-heading">Aero-Discovery Skills</h2>
+              <p eid="e131" class="text-xs text-white/80">
+                Growing competencies in aerospace technology
+              </p>
+            </div>
+          </div>
+          <div eid="e132" class="grid grid-cols-1 gap-4 relative z-10">
+            <div
+              eid="e133"
+              class="bg-white/10 backdrop-blur-sm border-2 border-white/20 p-4 rounded-2xl"
+            >
+              <div eid="e134" class="flex items-center gap-3 mb-3">
+                <iconify-icon
+                  icon="mdi:engine"
+                  eid="e135"
+                  class="size-7 text-blue-200"
+                ></iconify-icon
+                ><span eid="e136" class="text-base font-bold">Propulsion Systems</span>
+              </div>
+              <div eid="e137" class="h-3 w-full bg-white/20 rounded-full overflow-hidden">
+                <div
+                  eid="e138"
+                  class="h-full bg-gradient-to-r from-blue-300 to-blue-400 w-3/4 rounded-full shadow-lg"
+                ></div>
+              </div>
+              <p eid="e139" class="text-xs text-white/70 mt-2">
+                Understanding rocket engines and thrust mechanics
+              </p>
+            </div>
+            <div
+              eid="e140"
+              class="bg-white/10 backdrop-blur-sm border-2 border-white/20 p-4 rounded-2xl"
+            >
+              <div eid="e141" class="flex items-center gap-3 mb-3">
+                <iconify-icon
+                  icon="mdi:airplane-takeoff"
+                  eid="e142"
+                  class="size-7 text-blue-200"
+                ></iconify-icon
+                ><span eid="e143" class="text-base font-bold">Aerodynamics</span>
+              </div>
+              <div eid="e144" class="h-3 w-full bg-white/20 rounded-full overflow-hidden">
+                <div
+                  eid="e145"
+                  class="h-full bg-gradient-to-r from-blue-300 to-blue-400 w-2/3 rounded-full shadow-lg"
+                ></div>
+              </div>
+              <p eid="e146" class="text-xs text-white/70 mt-2">
+                Studying airflow and lift principles
+              </p>
+            </div>
+            <div
+              eid="e147"
+              class="bg-white/10 backdrop-blur-sm border-2 border-white/20 p-4 rounded-2xl"
+            >
+              <div eid="e148" class="flex items-center gap-3 mb-3">
+                <iconify-icon
+                  icon="solar:laptop-minimalistic-bold"
+                  eid="e149"
+                  class="size-7 text-blue-200"
+                ></iconify-icon
+                ><span eid="e150" class="text-base font-bold">CAD Modeling</span>
+              </div>
+              <div eid="e151" class="h-3 w-full bg-white/20 rounded-full overflow-hidden">
+                <div
+                  eid="e152"
+                  class="h-full bg-gradient-to-r from-blue-300 to-blue-400 w-1/2 rounded-full shadow-lg"
+                ></div>
+              </div>
+              <p eid="e153" class="text-xs text-white/70 mt-2">
+                Learning 3D design for aerospace components
+              </p>
+            </div>
+            <div
+              eid="e154"
+              class="bg-white/10 backdrop-blur-sm border-2 border-white/20 p-4 rounded-2xl"
+            >
+              <div eid="e155" class="flex items-center gap-3 mb-3">
+                <iconify-icon
+                  icon="solar:calculator-minimalistic-bold"
+                  eid="e156"
+                  class="size-7 text-blue-200"
+                ></iconify-icon
+                ><span eid="e157" class="text-base font-bold">Physics &amp; Mathematics</span>
+              </div>
+              <div eid="e158" class="h-3 w-full bg-white/20 rounded-full overflow-hidden">
+                <div
+                  eid="e159"
+                  class="h-full bg-gradient-to-r from-blue-300 to-blue-400 w-4/5 rounded-full shadow-lg"
+                ></div>
+              </div>
+              <p eid="e160" class="text-xs text-white/70 mt-2">
+                Strong foundation in calculus and mechanics
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div eid="e161" class="fixed bottom-6 right-6 z-50">
+        <button
+          eid="e162"
+          class="bg-accent text-white p-4 rounded-full shadow-2xl shadow-accent/40 hover:scale-110 transition-transform flex items-center justify-center border-2 border-white/20"
+        >
+          <iconify-icon icon="solar:chat-round-dots-bold" eid="e163" class="size-7"></iconify-icon>
+        </button>
+      </div>
+      <div
+        eid="e164"
+        class="fixed bottom-0 left-0 right-0 bg-card/95 backdrop-blur-xl border-t-2 border-primary/20 z-40 pb-safe shadow-2xl"
+      >
+        <div eid="e165" class="flex justify-around items-center h-16 px-2">
+          <button
+            eid="e166"
+            class="flex flex-col items-center justify-center w-full h-full text-primary"
+          >
+            <iconify-icon
+              icon="solar:user-circle-bold"
+              eid="e167"
+              class="size-7 mb-0.5"
+            ></iconify-icon
+            ><span eid="e168" class="text-[10px] font-bold">Profile</span></button
+          ><button
+            eid="e169"
+            class="flex flex-col items-center justify-center w-full h-full text-muted-foreground hover:text-primary transition-colors"
+          >
+            <iconify-icon
+              icon="solar:code-square-bold"
+              eid="e170"
+              class="size-7 mb-0.5"
+            ></iconify-icon
+            ><span eid="e171" class="text-[10px] font-medium">Projects</span></button
+          ><button
+            eid="e172"
+            class="flex flex-col items-center justify-center w-full h-full text-muted-foreground hover:text-primary transition-colors"
+          >
+            <iconify-icon icon="solar:rocket-2-bold" eid="e173" class="size-7 mb-0.5"></iconify-icon
+            ><span eid="e174" class="text-[10px] font-medium">Skills</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
