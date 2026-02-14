@@ -349,6 +349,32 @@
         /* ===========================
        PERSONAL PROFILE CARD
        =========================== */
+        .card__quote {
+            position: relative;
+            margin: 0 0 20px 0;
+            padding: 18px 20px 18px 24px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.04), rgba(96, 165, 250, 0.06));
+            border-left: 3px solid var(--blue-accent);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            font-size: 0.925rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .card__quote::before {
+            content: '\AB';
+            position: absolute;
+            top: -8px;
+            left: 10px;
+            font-size: 2.5rem;
+            font-style: normal;
+            color: var(--blue-accent);
+            opacity: 0.25;
+            font-family: var(--font-serif);
+            line-height: 1;
+        }
+
         .hobbies-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -762,11 +788,11 @@
                         <span class="card__label">Soft Skills & Centres d'intérêt</span>
                     </div>
                 </div>
-                <p class="card__description">
-                    Passionné par l'aéronautique et les nouvelles technologies, je combine rigueur académique et esprit
-                    de compétition. Mes activités sportives et stratégiques développent des compétences essentielles
-                    pour l'ingénierie.
-                </p>
+                <blockquote class="card__quote">
+                    J'aime bien la tech, coder des trucs et comprendre comment les choses fonctionnent. Le sport et les
+                    échecs m'aident à garder la tête froide, à réfléchir vite et à bosser en équipe — des qualités qui
+                    me servent aussi dans mes projets.
+                </blockquote>
                 <div class="hobbies-grid">
                     <div class="hobby-tile" id="hobby-handball">
                         <div class="hobby-tile__icon hobby-tile__icon--handball">🤾</div>
